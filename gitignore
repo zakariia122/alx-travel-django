@@ -12,5 +12,6 @@ venv/
 # VSCode
 .vscode/
 
-# System
+# macOS System Files
 .DS_Store
+
