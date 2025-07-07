@@ -2,11 +2,14 @@ import environ
 import os
 from pathlib import Path
 
+# تحديد مسار المشروع الأساسي
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# قراءة متغيرات البيئة من ملف .env
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
+# مفتاح السر (مع قيمة افتراضية لو ماكانش معرف في .env)
 SECRET_KEY = env("SECRET_KEY", default="your_fallback_secret_key")
 
 DEBUG = True
@@ -56,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'alx_travel_app.wsgi.application'
+WSGI_APPLICATION = 'alx_travel_app.wsgi.application'  # صححت اسم المشروع هنا
 
 DATABASES = {
     'default': {
@@ -69,7 +72,7 @@ DATABASES = {
     }
 }
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
